@@ -7,6 +7,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.SQLOutput;
 
+
+//JAVA 7
 public class Newio {
 
 public static void main(String ... arg ){
