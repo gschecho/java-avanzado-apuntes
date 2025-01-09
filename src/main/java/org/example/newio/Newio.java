@@ -1,12 +1,10 @@
 package org.example.newio;
 
-import org.w3c.dom.ls.LSOutput;
+
 
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.sql.SQLOutput;
-
 
 //JAVA 7
 public class Newio {

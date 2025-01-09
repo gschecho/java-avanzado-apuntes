@@ -8,8 +8,11 @@ public class LockedCounter {
     //Clase reentranlock sirve para bloquear y debloquear zonas del codigo
     private ReentrantLock lock = new ReentrantLock();
 
+    // lock.tryLock();
     //tryLock() del reentrantLock sirve para evitar los deadthreads... que no obtienen recursos para hacer la tarea que necesitan
     public void increment(){
+
+
         lock.lock();
         try{
             count++;

@@ -42,8 +42,9 @@ public class LocksDemo {
     public static void main(String ... args){
         LocksDemo demo = new LocksDemo();
         demo.demoCounter();
-        /*demo.demoSyncCounter();
+        demo.demoSyncCounter();
         demo.demoAtomicCounter();
-        demo.demoLockedCounter();*/
+        demo.demoLockedCounter();
+
     }
 }
