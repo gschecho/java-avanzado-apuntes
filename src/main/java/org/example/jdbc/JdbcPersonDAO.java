@@ -26,30 +26,77 @@ public class JdbcPersonDAO implements PersonDAO {
 
     @Override
     public List<Person> findAll() {
-
+/*
         List<Person> people = new ArrayList<>();
         try(
                 Connection con = DriverManager.getConnection(URL, USER,PASSWORD);
+                // createStatment o prepareStatment
                 PreparedStatement ps = con.prepareStatement("SELECT * FROM hr.people");
                 ){
             ResultSet rs = ps.executeQuery();
             while (rs.next()){
-                people.add(new Person(rs.getInt(1), rs.getString(2));
+                people.add(new Person(rs.getInt(1), rs.getString(2)));
             }rs.close();
         }catch (SQLException ex){
             ex.printStackTrace();
         }
         return people;
+        */
+        return null;
     }
 
     @Override
     public Person findById(int id) {
+
+        /*
+        Person p;
+
+        try( Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+        PreparedStatement ps =  conn.prepareStatement("SELECT * FROM hr WHERE id=?");){
+            ps.setInt(1,10);
+            ResultSet rs = ps.executeQuery();
+
+if(rs.next()){
+            return new Person(id, rs.getString(2) );
+}else {
+    System.out.printf("Resultado no encontrado con id= %d", id);
+}
+            rs.close();
+        } catch (SQLException  ex){
+            ex.printStackTrace();
+        }
+*/
         return null;
     }
 
     @Override
     public Integer save(Person p) {
+
+        /*
+        int generaredKey = 0;
+        try(
+                Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+                PreparedStatement ps =  conn.prepareStatement("INSERT INTO hr.people(name) values ('name'=?)", Statement.RETURN_GENERATED_KEYS);){
+
+                ps.setString(1, p.getName());
+                int r = ps.executeUpdate();
+
+                if(r!= 1 ) throw new SQLException("No se añadieron filas");
+                try(ResultSet keys = ps.getGeneratedKeys()){
+                   if(keys.next()){;
+                       generaredKey = keys.getInt(1);
+                   }
+                }
+
+
+        }catch( SQLException ex){
+
+        ex.printStackTrace();
+    }
+
+         */
         return null;
+
     }
 
     @Override
@@ -61,4 +108,6 @@ public class JdbcPersonDAO implements PersonDAO {
     public List<Integer> getIds() {
         return null;
     }
+
+
 }
