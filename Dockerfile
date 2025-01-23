@@ -4,6 +4,15 @@
 ## docker run -d -p 8080:8080 nombre-app
 
 
+
+
+# EL PREFIJO ENV ES PARA QUE LLAME LOS DATOS DESDE APPLICARTION.PROPERTIES
+# ENV DATABASE_URL jdbc:mysql://localhost:8080/bbdd
+
+#LABEL  author= YOMISMO
+
+#COPY target/app
+
 # Stage 1: Build the application
 FROM eclipse-temurin:8-jdk AS builder
 

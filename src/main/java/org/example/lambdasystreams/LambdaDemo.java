@@ -13,14 +13,17 @@ public class LambdaDemo {
                 //.forEach( System.out::println);
 
 
-        Consumer<Integer> impresora = n -> System.out.println(n);
+        Consumer<Integer> impresora = n -> System.out.println("Elemento del Stream "+n);
         Stream.of(1,2,3,4,5).forEach(impresora);
 
-        Predicate<Integer> mod3 = n -> n % 3 == 0;
-        Stream.of(1,2,3,4,5).filter(mod3).forEach(impresora);
 
+        System.out.println("\nModulo 3:");
+        Predicate<Integer> mod3 = n -> n % 3 == 0;
+        Stream.of(1,2,3,4,5,6).filter(mod3).forEach(impresora);
+
+        System.out.println("\nDoble modulo 3:");
         Function<Integer, Integer> doblador = n->n*2;
-        Stream.of(1,2,3,4,5).map(doblador).filter(mod3).forEach(impresora);
+        Stream.of(1,2,3,4,5,6).map(doblador).filter(mod3).forEach(impresora);
 
 
 
